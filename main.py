@@ -1,9 +1,10 @@
-from pyscript import Element
+from js import document
 import random
     
     
 def a_chance_at_victory(*args, **kwargs):
-    output.write("Welcome to A Chance At Victory!")
+    output = document.getElementById("output")
+    output.innerHTML("Welcome to A Chance At Victory!")
     points = 0
     
     # Bag
@@ -13,23 +14,22 @@ def a_chance_at_victory(*args, **kwargs):
         "Mouse": "+1 point IF you attack, +2 points IF you get attacked or IF you do nothing",
         "Shield": "+6 points IF you get attacked",
     }
-    output = Element("output")
     # input("Pull a random weapon from the bag (type 'choose' to choose): ")
     weapon_choice = random.choice(list(weapons.items()))
-    output.write(f"You got a {weapon_choice[0]}! This weapon gives you {weapon_choice[1]}!\n")
+    output.innerHTML(f"You got a {weapon_choice[0]}! This weapon gives you {weapon_choice[1]}!\n")
     
     # Dice
     # input("Roll 2 die for your starting points (type 'roll' to roll): ")
     die_one = random.randint(1,6)
     die_two = random.randint(1,6)
     total = die_one+die_two
-    output.write(f"You got a {die_one} on your first die and a {die_two} on your second die! This totals to {total}!\n")
+    output.innerHTML(f"You got a {die_one} on your first die and a {die_two} on your second die! This totals to {total}!\n")
     
     # Spinner
     # input("Spin a spinner: will you attack, get attacked, or do nothing (type 'spin' to spin)?: ")
     spinner = ["Attack!", "Get Attacked :(", "Do Nothing..."]
     action = random.choice(spinner)
-    output.write(f"You got {action}\n")
+    output.innerHTML(f"You got {action}\n")
     
     # Final
     attack_multiplier = 1
@@ -57,15 +57,15 @@ def a_chance_at_victory(*args, **kwargs):
     elif action == "Get Attacked :(":
         points -= 5
     
-    output.write(f"Game is over! You got {points} points!")
+    output.innerHTML(f"Game is over! You got {points} points!")
     
     if points < 0:
-        output.write("You lose. You beat 0 enemies.")
+        output.innerHTML("You lose. You beat 0 enemies.")
     elif points <= 7:
-        output.write("You beat one enemy.")
+        output.innerHTML("You beat one enemy.")
     elif points <= 13:
-        output.write("You beat two enemies!")
+        output.innerHTML("You beat two enemies!")
     elif points <= 19:
-        output.write("You beat three enemies!!")
+        output.innerHTML("You beat three enemies!!")
     elif points >= 20:
-        output.write("You win! You beat ALL FOUR enemies!!!!")
+        output.innerHTML("You win! You beat ALL FOUR enemies!!!!")
