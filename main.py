@@ -2,8 +2,8 @@ from pyscript import Element
 import random
     
     
-def a_chance_at_victory(event=None):
-    print("Welcome to A Chance At Victory!")
+def a_chance_at_victory(*args, **kwargs):
+    output.write("Welcome to A Chance At Victory!")
     points = 0
     
     # Bag
