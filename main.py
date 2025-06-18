@@ -20,7 +20,7 @@ def a_chance_at_victory(*args, **kwargs):
     die_one = random.randint(1,6)
     die_two = random.randint(1,6)
     total = die_one + die_two
-    output.innerHTML += f"You rolled a {die_one} and a {die_two}. Total: {total}<br>"
+    output.innerHTML += f"You rolled a <strong>{die_one}</strong> and a <strong>{die_two}</strong>. Total: <strong>{total}</strong><br>"
 
     spinner = ["Attack!", "Get Attacked :(", "Do Nothing..."]
     action = random.choice(spinner)
