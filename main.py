@@ -3,7 +3,7 @@ import random
 
 def a_chance_at_victory(*args, **kwargs):
     output = document.getElementById("output")
-    output.innerHTML = "🎲 <strong>Welcome to A Chance At Victory!</strong><br>"
+    output.innerHTML = "<br>🎲 <strong>Welcome to A Chance At Victory!</strong><br>"
 
     points = 0
 
